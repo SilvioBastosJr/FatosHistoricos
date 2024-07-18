@@ -1,14 +1,14 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 
-import servico from './servico/servico.js';
+import servico from './servico.js';
 
 app.get('/', (req, res) => {
     let ano = req.query.ano;
 
     let mensagem = servico.buscarFatoPorAno(ano);
 
-    res.json({mensagem: mensagem});
+    res.json({mensagem: mensagem});    
 });
 
 app.listen(8080, () => {
