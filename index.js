@@ -1,12 +1,12 @@
 import express from 'express';
 const app = express();
 
-import servico from './servico.js';
+import buscarFatoPorAno from './servico/servico.js'
 
 app.get('/', (req, res) => {
     let ano = req.query.ano;
 
-    let mensagem = servico.buscarFatoPorAno(ano);
+    let mensagem = buscarFatoPorAno(ano);
 
     res.json({mensagem: mensagem});    
 });
